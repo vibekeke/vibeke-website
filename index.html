@@ -4,48 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vibeke Selnes – Home</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Mulish:wght@300;400&display=swap">
   <link rel="stylesheet" href="styles.css"/>
   <link rel="stylesheet" href="mediaqueries.css"/>
 </head>
 <body>
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
+        const here = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll("nav .nav-links a[href]").forEach(a => {
+          const link = a.getAttribute('href').trim();
+          if (link === here) {
+            a.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+  </script>
 
-  <!-- Desktop Navigation -->
-  <nav id="desktop-nav">
-    <div class="logo">
-        <a href="index.html">Vibeke Ihlen Selnes</a>
+  <section id="banner">
+    <div class="banner-image">
+      <img src="./assets/hero/solbanner.png" alt="Banner artwork: Illustration of a sunrise">
     </div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Mobile Navigation -->
-  <nav id="hamburger-nav">
-    <div class="logo">Vibeke Ihlen Selnes</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="menu-links">
-        <ul>
-          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  </section>
 
   <!-- Home Content -->
   <section id="home">
-    <h1>Hello, I'm Vibeke Sennep</h1>
-    <p>I'm a game developer, artist, and creative person!</p>
+      <h2 class="pre-title">Hello, my name is</h2>
+      <h1 class="title">Vibeke Sennep :D</h1>
+      <p class ="intro">I’m a programming student at UiO with a focus on front-end development, UI, and user experience. I graduate with a bachelors in 2026!</p>
   </section>
 
   <script src="script.js"></script>

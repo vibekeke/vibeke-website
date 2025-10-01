@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moonlight Miko – Project</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Mulish:wght@300;400&display=swap">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="mediaqueries.css"/>
+</head>
+<body class="project-page">
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
+        const here = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll("nav a[href]").forEach(a => {
+          if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
+        });
+      });
+  </script>
+
+  <section id="banner">
+    <div class="banner-image">
+      <img src="assets\projects\mmat\miko-header.png" alt="Banner artwork: Illustration of a sunrise">
+    </div>
+  </section>
+  <section class="project-wrap" aria-labelledby="proj-title">
+    <div class="project-grid">
+      <article class="project-body">
+        <h2 class="pre-title">Game Project</h2>
+        <h1 class="title">Moonlight Miko vs. The Astral Troublemakers</h1>
+        <p class="lede">
+          A short, collaborative game project made for fun and learning!
+        </p>
+        <p>
+        Moonlight Miko is a 2D shoot-'em-up game created in collaboration with my friend and experienced developer Tyler McAllister. 
+        The game is still in development, and is currently the main project I am working on outside of my studies. The first prototype was released on September 22, 2025. 
+        </p>
+        <p>
+        Inspired by the colorful aesthetics of old school anime and magical girl series, our goal is to give players an experience that combines fun and comforting worldbuilding with challenge and mastery.
+        The gameplay is intentionally challenging, as we wanted to create a fun contrast between cheerful presentation and demanding gameplay.
+        </p>
+        <p>
+        The initial prototype features a single level, and can be played both in-browser and as a downloadable .exe file.
+        Our aim is to release a more complete version featuring 3 levels by March 2026.
+        </p>
+        <p>The game can be played here!</p>
+        <p>
+        <a class="inline-link" href="https://bekeblob.itch.io/browser-version-moonlight-miko-vs-the-astral-troublemakers-demo" target="_blank">Play the game in Browser at itch.io</a>
+        </p>  
+        <p>
+          <a class="inline-link" href="https://bekeblob.itch.io/moonlight-miko-vs-the-astral-troublemakers" target="_blank">Download the game for Windows, Mac and Linux at itch.io</a>
+        </p>
+        <br>
+        <h3>Contributors</h3>
+        <ul>
+          <li><strong>Vibeke Ihlen Selnes</strong> — Game direction, Art and Animation, UI and SFX</li>
+            <li><strong>Tyler McAllister</strong> — Game direction, physics & player movement, level design & project structure</li>
+            <li>Music by <strong>Trygve Ihlen Selnes</strong></li>
+        </ul>
+        <br>
+        <p>The project is built in Godot Engine 3.6. Sound effects are attributed to <a href="https://www.zapsplat.com/" class="inline-link">zapsplat.com</a>.
+        All other art and animations are created by us personally, without the use of AI.</p>
+        <br>
+        <h3>Design Documents</h3>
+        <div class="small-links">
+        <a href="assets\downloads\MMAT - Designdokument.pdf" target="_blank" rel="noopener" class="inline-link">Designdokument (PDF)</a>
+        <a href="assets\downloads\MMAT - Leveldesign.pdf" target="_blank" rel="noopener" class="inline-link">Level Design (PDF)</a>
+        <a href="assets\downloads\MMAT - Storyline.pdf" target="_blank" rel="noopener" class="inline-link">Storyline (PDF)</a>
+        </div>
+      </article>
+
+      <aside class="project-meta">
+        <h2>Project details</h2>
+        <dl>
+            <dt>Project type</dt><dd>Godot game (team)</dd>
+            <dt>Role</dt><dd>UI/UX + gameplay</dd><dd>Art, Animations and Assets</dd>
+            <dt>Tools</dt><dd>Godot Engine, gdscript, GDShader, Clip Studio Paint</dd>
+            <p></p>
+            <dt>Status</dt><dd>In progress</dd>
+            <dt>Latest version</dt><dd>Prototype v.1.0.0-alpha</dd>
+        </dl>
+
+        <div class="aside-links">
+            <a class="project-button" href="https://bekeblob.itch.io/" target="_blank">Play the Demo</a>
+            <a class="project-button" href="#" target="https://github.com/vibekeke/mgg">View on GitHub</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="project-wrap" aria-labelledby="video-title">
+    <h2 id="video-title">Gameplay Video</h2>
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Moonlight Miko Gameplay"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- 3) My contributions -->
+  <section class="project-wrap" aria-labelledby="contrib-title">
+    <h1 id="contrib-title">My Contributions</h1>
+    <p>While I originally only contributed to the game as the artist, as I have learned how to program and solve problems on my own,
+        I have recently taken up most of the responsibility relating to UI and UX. As of right now, the menus and UI flow is my main responsibility
+        alongside asset creation.
+    </p>
+    <p>As for this project, I have had the following responsibilities</p>
+    <ul class="tight-list">
+      <li>Designed and implemented the menus in the game: Title screen, intro screen, pause menus, popups, and display messages.
+      <li>Designed controller descriptions and icons.</li>
+      <li>Implemented all UI and gameplay sound effects through a centralized sound-manager</li>
+      <li>Animation, background and other assets</li>
+    </ul>
+  </section>
+
+  <!--UI showcase-->
+  <section class="project-wrap" aria-label="Project screenshots">
+    <h2>UI and HUDs</h2>
+    <p>The UI was designed to be simple, readable, and consistent. The menus are still going through constant iterations to reduce visual noise and to ensure that information about controls and progression is always easy to find.
+    </p>
+    <p>By recieving feedback through playtesting and experimentation, I wish to create menus that are both visually appealing and easy to navigate.
+    </p>
+    <div class="carousel">
+      <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+
+      <div class="carousel-track" tabindex="0">
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/mmat/ui_startlevel.png" alt="Level starting screen">
+          <figcaption>Level starting screen</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/mmat/ui_pause.png" alt="Pause menu with controls">
+          <figcaption>Pause menu, including player controls.</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/mmat/ui_win.png" alt="Victory screen">
+          <figcaption>Victory popup upon completing the level.</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/mmat/ui_hud.png" alt="Simplified HUD layout">
+          <figcaption>Simple, clean in-game HUD.</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/mmat/ui_title.png" alt="Title screen">
+          <figcaption>Title screen - this screen is still too noisy in my opinion due to the background, and will be changed with future updates</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/mmat/ui_credits.png" alt="Credits screen">
+          <figcaption>Credits popup; save-data deletion is hidden here for now.</figcaption>
+        </figure>
+      </div>
+
+      <button class="carousel-btn next" aria-label="Next image">›</button>
+    </div>
+  </section>
+
+  <!--Art showcase-->
+  <section class="project-wrap" aria-label="Project screenshots">
+    <h2>Art and Animation</h2>
+    <h3>Backgrounds</h3>
+    <p>The game consists of many different backgrounds and sprites, all hand drawn in Procreate and Clip Studio Paint. The backgrounds are
+      drawn to work as infinitely repeating parallax layers, giving the illusion of depth and endless forward movement.
+    </p>
+    <div class="text-image-wide">
+      <img src="/assets/projects/mmat/bakgrunn-skog.png" alt="Project screenshot">
+      <p>Level 1: Forest - currently used as the playable level in the prototype v.1.0.0-alpha</p>
+    </div>
+    <div class="text-image-wide">
+      <img src="/assets/projects/mmat/bakgrunn-strand.png" alt="Project screenshot">
+      <p>Level 2: Beach - this will be implemented as a playable level in the future.</p>
+    </div>
+    <div class="text-image-wide">
+      <img src="/assets/projects/mmat/bakgrunn-by.png" alt="Project screenshot">
+      <p>Level 3: City - currently used as a placeholder intro screen.</p>
+    </div>
+    <br>
+    <h3>Player and Enemy animations</h3>
+    <p>The sprites are exported as spritesheets to make the process of adding frames faster, and maintaining a clean structure
+      to the project.</p>
+    <div class="img-grid-2">
+      <div class="text-image">
+        <img src="/assets/projects/mmat/spritesheet-player.jpg" alt="Project screenshot"></p>
+      </div>
+      <div class="text-image">
+        <img src="/assets/projects/mmat/spritesheet-bigbird.png" alt="Project screenshot"></p>
+      </div>
+      <div class="text-image">
+        <img src="/assets/projects/mmat/spritesheet-snakeboard.png" alt="Project screenshot">
+      </div>
+    </div>
+    <p>A single animation typically consists of between 4 and 20 frames. As of right now there are
+    about 15 unique enemy animations and several player animations complete. We consider the amount of assets finished to be about
+  50-60% complete.</p>
+    <p>Animation is hard work, and important animations go through many iterations to make them feel just right.</p>
+
+    <div class="carousel-s">
+      <button class="carousel-btn-s prev" aria-label="Previous image">‹</button>
+      <div class="carousel-track" tabindex="0">
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/mmat/animation-run2.gif" alt="Level starting screen">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/mmat/animation-run3.gif" alt="Pause menu with controls">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/mmat/animation-run4.gif" alt="Victory screen">
+        </figure>
+      </div>
+
+      <button class="carousel-btn-s next" aria-label="Next image">›</button>
+    </div>
+  </section>
+  <!-- 5) Going forward -->
+  <section class="project-wrap" aria-labelledby="forward-title">
+    <h2 id="forward-title">Going Forward</h2>
+    <p>The plan for the project is to keep working on it and finish 3 complete levels by March 2026. This includes</p>
+    <ul class="tight-list">
+      <li>Updating and polishing UI, and adding accessibility features and user configuration.</li>
+      <li>Adding cutscenes with unique artwork and dialogue.</li>
+      <li>New level and enemy design for Level 2 and 3, both in terms of gameplay and assets</li>
+      <li>Playtesting difficulty curves and collecting user feedback.</li>
+      <li>Creating a Tutorial level.</li>
+    </ul>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

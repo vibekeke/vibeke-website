@@ -1,0 +1,222 @@
+/*
+All of my neat reusable components that are used on many pages :)
+*/
+
+/* Buttons: split left/right */
+.project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* left vs right */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.actions-right { display: flex; gap: .5rem; }
+
+/**/
+.small-links {
+  margin-bottom: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+
+.inline-link {
+  color: var(--accent-color-dark);
+  font-weight: bold;
+}
+
+
+.project-button,
+.project-button-2 {
+  display: inline-flex;            
+  align-items: center;             
+  justify-content: center;         
+  line-height: 1;                  /* remove extra leading from body */
+  padding: 0.6rem 1rem 0.5rem;        /* adjusting to make text look more centered*/
+  border-radius: 999px;
+font-weight: bold;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.project-button {
+  background-color: transparent;
+  color: var(--accent-color-dark);
+  border: 1px solid var(--accent-color-dark);
+}
+.project-button:hover {
+  background-color: #27287a;
+  color: white;
+}
+
+.project-button-2 {
+  background-color: var(--accent-color-dark);
+  color: white;
+  border: 1px solid var(--accent-color-dark);
+  transition: background-color 0.2s ease, border-color 0.2s ease,transform 0.1s ease;
+}
+
+.project-button-2:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+
+
+
+/* --- Back-to-top button --- */
+.back-to-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 1000;
+
+  /* hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 0s linear 180ms;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+}
+
+.back-to-top img {
+  width: 50px; 
+  height: 50px;
+  display: block;
+  opacity: 0.85;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.back-to-top:hover img {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+
+/* Video */
+.video-frame {
+  width: 80%;
+  aspect-ratio: 16 / 9;
+  background: #00000010;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.video-frame > video,
+.video-frame > iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Lists */
+
+/* Small helper for hidden headings (keeps landmarks accessible) */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Responsive: stack on narrower screens */
+@media (max-width: 960px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-aside {
+    order: -1; /* put details above the body on mobile, adjust if you prefer below */
+  }
+}
+
+
+/* Carousel layout */
+.carousel {
+  max-width: 1280px;
+  margin-inline: auto;
+  position: relative;
+}
+
+.carousel-s {
+  max-width: 800px;
+  margin-inline: auto;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;              /* simpler than grid here */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.carousel-track::-webkit-scrollbar { height: 8px; }
+.carousel-track::-webkit-scrollbar-thumb { background: #cacacc; border-radius: 99px; }
+
+.carousel-slide {
+  flex: 0 0 100%;             /* one full-width slide at a time */
+  scroll-snap-align: center;
+  margin-right: 1rem;         /* spacing between slides */
+}
+.carousel-slide:last-child { margin-right: 0; }
+
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* forces a 16:9 box */
+  object-fit: contain;    /* image shrinks to fit, no cropping */
+  /* optional: uncomment if you want visible letterbox bars
+  background: #000;        */
+  border-radius: 0;
+}
+
+.carousel-slide figcaption {
+  font-size: 1rem;
+  opacity: .8;
+  padding: .5rem 2rem 0 2rem;
+}
+
+/* overlay buttons */
+.carousel-btn, .carousel-btn-s {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-70%);
+  z-index: 2;
+  appearance: none;
+  border: 0;
+  background: rgba(226, 226, 226, 0.568);
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.418);
+  font-size: 1.8rem;
+  line-height: 1;
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: transform .1s ease, background .2s ease;
+}
+
+.carousel-btn-s {
+    width: 35px;
+    height: 35px;
+}
+
+
+.carousel-btn:hover, .carousel-btn-s:hover {
+  transform: translateY(-70%) scale(1.1);
+  background: rgba(255, 255, 255, 0.774);
+}
+
+.carousel-btn.prev { left: 0.5rem; }
+.carousel-btn.next { right: 0.5rem; }
+
+.carousel-btn-s.prev { left: 0.5rem; }
+.carousel-btn-s.next { right: 0.5rem; }

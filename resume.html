@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume – Vibeke Selnes</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Mulish:wght@300;400&display=swap">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="mediaqueries.css"/>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
+        const here = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll('nav a').forEach(a => {
+          if (a.getAttribute('href') === here) {
+            a.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+  </script>
+
+  <!-- Contact Content -->
+  <section id="contact">
+    <h2>Here's my resume</h2>
+    <p><a class="inline-link" href="boobs">Download PDF</a></p>
+    <p>Socials: [Twitter / Itch.io / Instagram]</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

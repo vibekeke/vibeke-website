@@ -4,39 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact – Vibeke Selnes</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Mulish:wght@300;400&display=swap">
   <link rel="stylesheet" href="styles.css"/>
   <link rel="stylesheet" href="mediaqueries.css"/>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav id="desktop-nav">
-    <div class="logo">
-        <a href="index.html">Vibeke Ihlen Selnes</a>
-    </div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  <nav id="hamburger-nav">
-    <div class="logo">Vibeke Ihlen Selnes</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="menu-links">
-        <ul>
-          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
+        const here = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll('nav a').forEach(a => {
+          if (a.getAttribute('href') === here) {
+            a.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+  </script>
 
   <!-- Contact Content -->
   <section id="contact">

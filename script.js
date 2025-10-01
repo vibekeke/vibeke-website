@@ -43,3 +43,47 @@ if (buttons.length && posts.length) {
     });
   }
 }
+
+
+// --- simple scroll-snap carousel controls ---
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const prev  = carousel.querySelector('.carousel-btn.prev');
+  const next  = carousel.querySelector('.carousel-btn.next');
+
+  const slideWidth = () => track.clientWidth; // one slide == track width
+
+  const scrollBySlide = dir => {
+    track.scrollBy({ left: dir * slideWidth(), behavior: 'smooth' });
+  };
+
+  prev?.addEventListener('click', () => scrollBySlide(-1));
+  next?.addEventListener('click', () => scrollBySlide(1));
+
+  // Keyboard support when the track is focused
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); scrollBySlide(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); scrollBySlide(1); }
+  });
+});
+
+document.querySelectorAll('.carousel-s').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const prev  = carousel.querySelector('.carousel-btn-s.prev');
+  const next  = carousel.querySelector('.carousel-btn-s.next');
+
+  const slideWidth = () => track.clientWidth; // one slide == track width
+
+  const scrollBySlide = dir => {
+    track.scrollBy({ left: dir * slideWidth(), behavior: 'smooth' });
+  };
+
+  prev?.addEventListener('click', () => scrollBySlide(-1));
+  next?.addEventListener('click', () => scrollBySlide(1));
+
+  // Keyboard support when the track is focused
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); scrollBySlide(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); scrollBySlide(1); }
+  });
+});

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Goop Game – Project</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Mulish:wght@300;400&display=swap">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="mediaqueries.css"/>
+</head>
+<body class="project-page">
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
+        const here = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll("nav a[href]").forEach(a => {
+          if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
+        });
+      });
+  </script>
+
+  <section id="banner">
+    <div class="banner-image">
+      <img src="assets/projects/goop-game/goops.png" alt="Banner artwork: Illustration of round creatures">
+    </div>
+  </section>
+  <section class="project-wrap" aria-labelledby="proj-title">
+    <div class="project-grid">
+      <article class="project-body">
+        <h2 class="pre-title">Game Project</h2>
+        <h1 class="title">Goop Game</h1>
+        <p class="lede">
+          A summer game project for learning Unity and teamwork!
+        </p>
+        <p>
+          This game project was started for me and a few friends to practice programming and development in Unity.
+          It was a great opportunity to practice project planning, and programming in a team using version control.
+        </p>
+        <p>
+          The games concept is a terrarium-like pet-simulator where you watch tiny creatures called "Goops" grow and survive in a tank.
+          The idea is that each creature evolves based on how the player interacts with the terrarium and the creatures in it - as 
+          well as how these interact with one another.
+        </p>
+        <p>
+          The game is still early in it's development, and is currently on hold as everyone prioritizes their studies. However, we got quite 
+          far laying the foundation throughout this summer, and are proud of all we accomplished!
+        </p>
+        <br>
+        <h2>Contributors</h2>
+        <ul>
+            <li><strong>Simen</strong> - Long term game developer and experienced in Unity</li>
+            <li><strong>Mila</strong> - Studies Programming and System Architecture at UiO</li>
+            <li><strong>Lazo</strong> - Studies Robotics at UiO</li>
+            <li><strong>Vibeke</strong> - Thats me :D I also study Programming and System Architecture at UiO</li>
+        </ul>
+      </article>
+      <aside class="project-meta">
+        <h2>Project details</h2>
+        <dl>
+            <dt>Project type</dt><dd>Unity Game (Team of 4)</dd>
+            <dt>Role</dt><dd>Game & System Design, Inventory Management</dd>
+            <dt>Tools</dt><dd>Unity Engine, C#</dd>
+            <p></p>
+            <dt>Status</dt><dd>On hold</dd>
+        </dl>
+        <div>
+            <a class="project-button" href="#" target="_blank">View Code on GitHub</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="project-wrap" aria-labelledby="video-title">
+      <div class="text-image">
+          <img src="assets/projects/goop-game/concept1.png" alt="concept of pixel art game">
+          <p>Concept art of what the game might look like with a pixel-artstyle</p>
+      </div>
+    <br>
+    <h2>Design and process</h2>
+    <p>The core design idea behind the game was that we wanted to make a game where the game world generates
+    unique interactions and suprising events on its own.
+    </p>
+    <p>From June to August 2025, the team held weekly meetings about the design and direction of the project. 
+      It was important for everyone to be on the same page about the idea of project, and up-to-date on the latest changes to the project.
+    </p>
+    <p>
+      We decided early on to use Unity as our game-engine due to Simen being quite experienced in it, and Git for version control.
+      We also kept a log of every meeting and the decisions made during them.
+    </p>
+    <p>Here are some snapshots of our work fleshing out the games concept and design:
+    </p>
+    <div class="carousel">
+      <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+
+      <div class="carousel-track" tabindex="0">
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/goop-game/prosess_irl.jpg" alt="Level starting screen">
+          <figcaption>A picture of our early design process, as we figured out how the game should function.</figcaption>
+        </figure>
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/goop-game/prosess_ideer.png" alt="Concept idea">
+          <figcaption>Concept explanation of the visual growth system, written by Mila.</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/goop-game/prosess_tidlig.png" alt="Early concept diagram">
+          <figcaption>A presentation of the early concept for the game, made by me :)</figcaption>
+        </figure>
+        
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/goop-game/prosess_domener.png" alt="Pause menu with controls">
+          <figcaption>An overview of each "component" of the game that needs to be made.</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/goop-game/prosess_traits.png" alt="Domain model explaining the stat system">
+          <figcaption>The stat, trait and evolution system, designed by Simen.</figcaption>
+        </figure>
+      </div>
+
+      <button class="carousel-btn next" aria-label="Next image">›</button>
+    </div>
+    <br>
+    <p>
+    </section>
+    <section class="project-wrap">
+    <h2>Current Progress</h2>
+    So far into development we have made:
+        <p>
+          <ul>
+            <li>A modular Finite State Machine for easily adding states to the in-game creatures.</li>
+            <li>A prototype for soft-body physics for the Goop models.</li>
+            <li>A working inventory system featuring adding, moving, stacking, splitting
+              deleting items. (I made this part :D)</li>
+            <li>A system for adding managing stats and traits for each Goop, and changing these through gameplay.</li>
+            <li>The foundational design for the game flow and necessary components</li>
+            <li>Lots of cool concept art, ideas and plans for future development!</li>
+          </ul>
+    <br>
+    <p>Here are some of these things in action :D</p>
+    <div class="text-image">
+      <img src="assets/projects/goop-game/statemachine.gif" alt="Finite State Machine showcase">
+      <p>Testing the state changing based on the appearance of food.</p>
+    </div>
+    <br>
+    <div class="text-image">
+      <img src="assets/projects/goop-game/goopbody.gif" alt="Softbody physics showcase">
+      <p>An early version of how the soft-body physics may look in game!</p>
+    </div>
+  </section>
+
+
+  <section class="project-wrap" aria-labelledby="contrib-title">
+    <h2 id="contrib-title">My Main Contribution: Inventory System</h2>
+    For the purpose of our game, which revolves around mouse- and touch controls, we wanted a system where you can 
+    <ul>
+      <li>Sort and manage inventory items using drag- and drop.</li>
+      <li>Drag stored inventory items into the game world, and back into the inventory storage.
+      </li>
+      <li>Functionality for adding and removing items by other game components (i.e. reward systems or shops).</li>
+    </ul>
+    <p>Due to the drag and drop nature of the inventory, I also wanted the inventory system to feature common
+      operations for merging items into stacks, splitting stacks, removing items etc. 
+    </p>
+    <div class="text-image">
+      <img src="assets/projects/goop-game/inventory.gif" alt="Inventory testing showcase">
+      <p>The inventory system in use, using placeholder items. Circles have a max stack of 22.</p>
+    </div>
+    <p>
+      I struggled a lot trying to make sure the UI
+      and Inventory state always match each other, and leaving no room for losing or duplicating items due to errors or mistakes.
+      However, in the end the inventory turned out just how I wanted it :)
+    </p>
+    <p>In its current state, the user can:</p>
+    <ul>
+      <li>Click and drag to hold item or item stack.</li>
+      <li>Right click stack to split in half.</li>
+      <li>Drop item or stack on empty slot to place.</li>
+      <li>Drop on existing stack to merge onto stack (if allowed).</li>
+      <li>Drop item on item of a different type to swap places.</li>
+      <li>Left click while holding stack to place ONE item into the inventory slot - including occupied once.</li>
+    </ul>
+    <br>
+    <p>The following diagram shows the architecture of the inventory system. To maintain a clean model-view-control
+      pattern, I made an event-driven system 
+      where the centralized InventoryManager reports any changes to the inventory to the UI, and the UI requests changes to the InventoryManager based on player input.
+    </p>
+      <div class="text-image">
+        <img src="/assets/projects/goop-game/inventory_design.png" alt="Project screenshot">
+      </div>
+    <br>
+    <p>The held item is stored as a separate entry called "on_hand", where it exists until it is placed or fails
+      to be placed by the player. As such, adding keyboard only controls to this system shouldn't take too long.
+    </p>
+    <p>I am quite proud of the inventory system I landed on. It took a lot of trial and error, but it was a very fun exercise in
+      making a complex, robust system that can interact with both the player and the rest of the gameworld.
+    </p>
+
+  </section>
+
+  <!-- 5) Going forward -->
+  <section class="project-wrap" aria-labelledby="forward-title">
+    <h2 id="forward-title">Going Forward</h2>
+    <p>As summers can be unpredictable, and university even more so, we have decided to put the project on hold
+      in order to focus on other things. However, I believe we have made a very solid foundation for future work, with systems
+      that are scalable and easy to use alongside other systems.
+    </p>
+    <p>While the future of the project is therefore unknown, I am nonetheless grateful for all the effort we
+      put into the projects, and all the lessons of teamwork and project management I've picked up along the way.
+    </p>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

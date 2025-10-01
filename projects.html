@@ -4,39 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects – Vibeke Selnes</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Mulish:wght@300;400&display=swap">
   <link rel="stylesheet" href="styles.css"/>
   <link rel="stylesheet" href="mediaqueries.css"/>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav id="desktop-nav">
-    <div class="logo">
-        <a href="index.html">Vibeke Ihlen Selnes</a>
-    </div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  <nav id="hamburger-nav">
-    <div class="logo">Vibeke Ihlen Selnes</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="menu-links">
-        <ul>
-          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
+        const here = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll('nav a').forEach(a => {
+          if (a.getAttribute('href') === here) {
+            a.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+  </script>
 
   <!-- Projects Content -->
   <section id="projects">
@@ -51,12 +38,47 @@
 
     <div class="project-feed">
       <div class="project-post games">
-        <h3>Goop Game</h3>
+        <h3 class="project-title">
+          <a href="project_moonlight-miko.html">Magical Girl Game: Moonlight Miko</a>
+        </h3>
+        <div class="tags">
+          <span class="tag">2D Video Game</span>
+          <span class="tag">Godot</span>
+          <span class="tag">GDScript</span>
+          <span class="tag">Collaboration</span>
+        </div>
+        <div class="project-image">
+          <img src="assets\projects\mmat\miko-header.png" alt="Screenshot of Magical Girl Game">
+        </div>
+
+        <p class="project-excerpt">
+          A cute Magical Girl Game Project made in collaboration with Tyler McAllister.
+        </p>
+        <p>I initially started this project as the 2D artist and animator, but as I've learned how to code on my own
+          I am contributing more and more to the implementation of the game as well. It has been wonderful way to
+          learn system design and project management alongside my much more experienced friend.
+        </p>
+        <p>We are quite proud of this game, so please check it out!</p>
+        <div class="project-actions">
+          <div class="actions-left">
+            <a class="project-button" href="project_moonlight-miko.html">Read More</a>
+          </div>
+          <div class="actions-right">
+            <a class="project-button-2" href="https://bekeblob.itch.io/">Play on Itch.io</a>
+           <a class="project-button-2" href="https://github.com/vibekeke/mgg">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-post games">
+        <h3>
+          <a href="project_goop-game.html">Goop Game</a>
+        </h3>
           <div class="tags">
+            <span class="tag">2D Video Game</span>
             <span class="tag">Unity</span>
             <span class="tag">C#</span>
             <span class="tag">Team Project</span>
-            <span class="tag">In progress :D</span>
         </div>
         <div class="project-image">
           <img src="./assets/goops.png" alt="Project screenshot">
@@ -71,17 +93,21 @@
         <p>You can read more about this project here</p>
           
         </p>
-        <div class="project-links">
-            <a href="https://github.com/vibekeke/goop-game" target="_blank" class="project-button">View on GitHub</a>
+        <div class="project-actions">
+          <div class="actions-left">
+            <a class="project-button" href="project_goop-game.html">Read More</a>
+          </div>
+          <div class="actions-right">
+            <a class="project-button-2" href="https://github.com/vibekeke/goop-game">View on GitHub</a>
+          </div>
         </div>
       </div>
       <div class="project-post games">
         <h3>Pet the Bubble Game</h3>
         <div class="tags">
+          <span class="tag">Gamejam project</span>
           <span class="tag">Godot Engine</span>
-          <span class="tag">gdscript</span>
-          <span class="tag">Solo Project</span>
-          <span class="tag">Global Game Jam</span>
+          <span class="tag">Solo work</span>
         </div>
         <div class="project-image">
           <img src="./assets/boble_illustrasjon.png" alt="Project screenshot">
@@ -89,32 +115,14 @@
         <p>A short game jam for the Global GameJam 2025, with the theme "bubbles"</p>
         <p>The game was made entirely by me over a single weekend. My goal for this project was to keep things extra simple so that I could finish it despite the limited timeframe.</p>
         <p>I made a lot of mistakes on this project and learned a lot, and I am quite satisfied with the fact that I was able to finish the game! The game can be played in browser, and although it works on mobile it is intended to be played on desktop.</p>
-        <div class="project-links">
-            <a href="https://bekeblob.itch.io/petbubble" target="_blank" class="project-button">Play on Itch.io</a>
-            <a href="https://github.com/vibekeke/bubblegame" target="_blank" class="project-button">View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-post games">
-        <h3>Magical Girl Game</h3>
-        <div class="tags">
-          <span class="tag">Godot</span>
-          <span class="tag">GdScript</span>
-          <span class="tag">Collaboration</span>
-        </div>
-        <div class="project-image">
-          <img src="./assets/temp_screen.png" alt="Project screenshot">
-        </div>
-        <p>A cute magical girl game project made by me and Tyler McAllister in Godot. 
-        </p>
-        <p>My main contribution to this project was the art and animations, and shared responsibility for game design and project planning. Tyler was in charge of
-          the programming and implementation. As this project first began before I had learnt how to code for myself, it was an excellent entry point for me to
-          learn to think in terms of system design and user experience.     
-        </p>
-        <p>The goal of this project was simply to explore and have fun. It is currently shelved for now, but we have made a playable demo you can play in browser!</p>
-        
-        <div class="project-links">
-            <a href="https://bekeblob.itch.io/the-colors-of-grandmas-forest" target="_blank" class="project-button">Play on Itch.io</a>
-            <a href="https://github.com/zonateduck/pygame-gamejam" target="_blank" class="project-button">View on GitHub</a>
+        <div class="project-actions">
+          <div class="actions-left">
+            <a class="project-button" href="project_moonlight-miko.html">Read More</a>
+          </div>
+          <div class="actions-right">
+            <a class="project-button-2" href="https://itch.io/...">Play on Itch.io</a>
+           <a class="project-button-2" href="https://github.com/...">View on GitHub</a>
+          </div>
         </div>
       </div>
       <div class="project-post games">
@@ -135,25 +143,35 @@
             <a href="https://github.com/zonateduck/pygame-gamejam" target="_blank" class="project-button">View on GitHub</a>
         </div>
       </div>
-
+      <div class="project-post games">
+        <h3>Dog Simulation Game</h3>
+        <div class="tags">
+          <span class="tag">2D Game Prototype</span>
+          <span class="tag">Godot Engine</span>
+          <span class="tag">Shelved</span>
+        </div>
+        <p>This is a very simple prototype for a tamagotchi-like pet simulator app. It was one of the first game projects I started working on!
+        </p>
+      </div>
       <div class="project-post games">
         <h3>Abatha</h3>
+        <div class="tags">
+          <span class="tag">2D Video Game</span>
+          <span class="tag">Godot Engine</span>
+          <span class="tag">On Hold</span>
+        </div>
         <div class="project-image">
           <img src="./assets/øyskisse2_cropped.jpg" alt="Project screenshot">
         </div>
-        <p>Description here.</p>
-      </div>
-      <div class="project-post games">
-        <h3>Dog Simulation Game</h3>
-        <p>Description here.</p>
+        <p>A personal project I work on from time to time. More info about this project will be added later :)</p>
       </div>
       <div class="project-post 3d">
-        <h3>3D Sculpt</h3>
-        <p>Description here.</p>
+        <h3>3D Model</h3>
+        <p>This section is a work in progress :)</p>
       </div>
       <div class="project-post 2d">
-        <h3>Illustration</h3>
-        <p>Description here.</p>
+        <h3>2D art</h3>
+        <p>This section is a work in progress :)</p>
       </div>
     </div>
   </section>
