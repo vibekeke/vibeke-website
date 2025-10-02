@@ -27,6 +27,10 @@ All of my neat reusable components that are used on many pages :)
   font-weight: bold;
 }
 
+.inline-link:hover {
+  text-decoration: underline;
+  text-decoration-color: currentColor; /* fade-in effect */
+}
 
 .project-button,
 .project-button-2 {

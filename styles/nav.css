@@ -6,10 +6,11 @@ nav {
   top: 0;
   left: 0;
   z-index: 1000;
-  padding: 1em 2em 0.1em;
+  padding: 1em 2em 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 nav a[aria-current="page"] {
@@ -86,7 +87,7 @@ nav a[aria-current="page"] {
 .menu-links {
   position: absolute;
   right: 0;
-  top: calc(100% + 10px);
+  top: calc(100% + 30px);
   min-width: 220px;
 
   background: rgba(255,255,255,0.98);
@@ -94,7 +95,7 @@ nav a[aria-current="page"] {
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   backdrop-filter: saturate(120%) blur(6px);
 
-  padding: 1rem 1rem;
+  padding: 1rem;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
@@ -112,15 +113,14 @@ nav a[aria-current="page"] {
 }
 
 .menu-links ul { 
-  list-style: none;  /* bullets align with text */
-  margin: 0, 2rem; 
+  list-style: none;  /* No bullets */
+  margin: 0, 1.2rem; 
   padding: 0; 
 }
 
 .menu-links ul li::before {
   content: none;        /* custom bullet */
 }
-
 
 
 /* vertical spacing between items */

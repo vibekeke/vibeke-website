@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="mediaqueries.css"/>
 </head>
 <body>
-  <div id="nav-placeholder"></div>
+  <div id="nav-placeholder">
   <script>
     fetch("header.html")
       .then(r => r.text())
@@ -24,18 +24,65 @@
         });
       });
   </script>
-
-  <section id="banner">
-    <div class="banner-image">
-      <img src="./assets/hero/solbanner.png" alt="Banner artwork: Illustration of a sunrise">
+  </div>
+  <section class="hero">
+    <div class="px-hero-banner" aria-hidden="true">
+      <div class="pxp-layer pxp-1-cropped"></div>
+      <div class="pxp-layer pxp-2-fast"></div>
     </div>
   </section>
 
   <!-- Home Content -->
   <section id="home">
       <h2 class="pre-title">Hello, my name is</h2>
-      <h1 class="title">Vibeke Sennep :D</h1>
-      <p class ="intro">I’m a programming student at UiO with a focus on front-end development, UI, and user experience. I graduate with a bachelors in 2026!</p>
+      <h1 class="title">Vibeke Ihlen Selnes :D</h1>
+      <div class="aside-links">
+
+      </div>
+      
+      <div class="small-container">
+          <p class ="intro">🖥️Programming Student at UiO |
+            <a>👾Hobby Gamedev |</a>  
+            <a>💡UX focused </a>
+          </p>
+          <p class="intro-2">I graduate with a a bachelors degree spring 2026!</p>
+    </section>
+
+  <section id="about">
+    <div class="about-container">
+      <h2 class="section-title">About me</h2>
+      <div class="about-grid">
+        <div class="description">
+          <p>
+            I'm a programming student graduating in 2026. I love creating things with other people - and have found
+            that I have a lot of passion for UI and UX.
+          </p>
+          <p>Most of my experience is in game development, but I really wish to expand by learning webdevelopment going forward!</p>
+          <p>
+          </p>
+        </div>
+        <figure class="about-photo">
+          <!-- replace with your own file path -->
+          <img src="assets/hulebilde.jpg" alt="Photo of Vibeke Sennep" loading="lazy">
+        </figure>
+      </div>
+      <div class="description">
+        <p>You can read more about me on my <a class="inline-link" href="about.html"> about page</a>.</p>
+        <br>
+      </div>
+      <h3 class="section-title">Skills and experience:</h3>
+      <div class="description">
+          <ul>
+            <li><strong>Programming: </strong>Java, C#, Python</li>
+            <li><strong>Webdevelopment: </strong>HTML, CSS (Making this website!)</li>
+            <li><strong>Tools and engines: </strong>Playwright, Unity, Godot Engine</li>
+          </ul>
+        <p>Going forward I aim to learn Javascript, React, and Tailwind, and keep working on some of my current
+          gamedev projects ヾ(＠⌒ー⌒＠)ノ
+        </p>
+      </div>
+      </div>
+    </div>
   </section>
 
   <script src="script.js"></script>

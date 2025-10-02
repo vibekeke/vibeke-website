@@ -1,6 +1,8 @@
-@layer base, nav, components, pages;
+@layer base, layout, nav, components, pages, parallax;
 
 @import url(styles/base.css) layer(base);
+@import url(styles/layout.css) layer(layout);
 @import url(styles/nav.css) layer(nav);
 @import url(styles/components.css) layer(components);
-@import url(styles/pages.css) layer(pages);
+@import url(styles/projects.css) layer(projects);
+@import url(styles/parallax.css) layer(parallax);

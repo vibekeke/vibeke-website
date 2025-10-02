@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moonlight Miko – Project</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Mulish:wght@300;400&display=swap">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="mediaqueries.css"/>
+</head>
+<body class="project-page">
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
+        const here = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll("nav a[href]").forEach(a => {
+          if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
+        });
+      });
+  </script>
+
+  <section id="banner-s">
+    <div class="banner-image">
+      <img src="assets\projects\petbubble\boble_illustrasjon.png" alt="Banner artwork: Illustration of a sunrise">
+    </div>
+  </section>
+
+  <section class="project-wrap" aria-labelledby="proj-title">
+    <div class="project-grid">
+      <article class="project-body">
+        <h2 class="pre-title">Game Project</h2>
+        <h1 class="title">Pet the Bubble</h1>
+        <p class="lede">
+            A game jam game about petting a soap bubble!
+        </p>
+        <p>This game was made as part of Global Game Jam 2026, over a single weekend. As I was quite busy
+         that particular weekend, I decided to keep the scope super minimal and create a game where you simply pet a bubble.
+        </p>
+        <p>The theme of the gamejam was "bubbles", and the idea came to mind of creating a game about trying to pet something that
+            is inherently fragile.
+        </p>
+        <p>This was the first game I ever completed, exported and published, and it taught me a lot about priotitizing the features
+            that are absolutely necessary to create a playable experience.
+        </p>
+        <p>
+        <a class="inline-link" href="https://bekeblob.itch.io/petbubble">The game can be played in browser here at itch.io!</a></p>
+      </article>
+    <aside class="project-meta">
+        <h2>Project details</h2>
+        <dl>
+            <dt>Project type</dt><dd>Godot game (solo)</dd>
+            <dt>Role</dt><dd>Gamedesign, Implementation, Art and UI</dd>
+            <dt>Tools</dt><dd>Godot Engine, GdScript, Procreate</dd>
+            <p></p>
+            <dt>Status</dt><dd>Completed</dd>
+            <br>
+        </dl>
+        <div class="aside-links">
+            <a class="project-button" href="https://bekeblob.itch.io/petbubble" target="_blank">Play in browser</a>
+            <a class="project-button" href="#" target="https://github.com/vibekeke/bubblegame">View on GitHub</a>
+        </div>
+      </aside>
+  </section>
+  <section class="project-wrap">
+    <h2>Gameplay</h2>
+    <p>The game does not give much info to the player regarding the mechanics, aside from how to pet the bubble. It is up to 
+        the player to experiment in order to learn how to win and lose the game - or whether such a thing is even possible.
+    </p>
+    <div class="text-image">
+      <img src="assets/projects/petbubble/klappe.gif" alt="Gameplay footage of a bubble being pet">
+      <p>The animations and bubble animations react to being pet, as an internal score keeps track
+        of the bubbles happiness level.
+      </p>
+    </div>
+        <p>There are two fail states to the game:</p>
+    <ul>
+        <li>Petting the bubble too much</li>
+        <li>Petting the bubble too rarely</li>
+    </ul>
+    <p>A cooldown timer keeps track of the bubbles "stress" level and "loneliness" level, and if either value reaches a certain point it is game over.</p>
+    <p>Hoever, if the player manages to pet the bubble just the right amount, they are rewarded with a victory screen and a nice song.</p>
+
+    <br>
+    <div class="text-image">
+      <img src="assets/projects/petbubble/stirre.gif" alt="Gameplay footage of a bubble being pet">
+      <p>The face follows the mouse cursor as the bubble waits in anticipation! Meanwhile, you can pop nearby (non-sentient) bubbles.</p>
+    </div>
+    <p>A lot of work went into making sure the face and bubble animations felt responsive and reactive. The face is also the primary 
+        communication tools regarding the state of the bubble. It is up to the player to recognize the changing face and adjust their petting tempo accordingly.
+    </p>
+    <div class="img-grid-2s">
+      <div>
+        <img src="/assets/projects/petbubble/face1.png" alt="Cartoon face on white background"></p>
+      </div>
+      <div class=>
+        <img src="/assets/projects/petbubble/face2.png" alt="Cartoon face on white background"></p>
+      </div>
+      <div class=>
+        <img src="/assets/projects/petbubble/face3.png" alt="Cartoon face on white background">
+      </div>
+    <div class=>
+        <img src="/assets/projects/petbubble/face4.png" alt="Cartoon face on white background">
+      </div>
+    <div class=>
+        <img src="/assets/projects/petbubble/face5.png" alt="Cartoon face on white background">
+      </div>
+    <div class=>
+        <img src="/assets/projects/petbubble/face6.png" alt="Cartoon face on white background">
+      </div>
+    </div>
+    <h2>What I learned</h2>
+    <p>This project was great for seeing what I could do with very little time to learn new things. It was also nice to 
+        work with a hard deadline, as exporting projects and showing it to people is often a part of the process it is easy to 
+        procrastinate.
+    </p>
+    <p>It was also great working around so many talended people, getting their feedback and seeing how they work. I definitely look forward
+        to attending more jams and hackatons in the future!
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p></p>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

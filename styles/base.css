@@ -76,9 +76,3 @@ ul li::before {
   font-size: 1rem;
 }
 
-
-section {
-  padding: 4em 2em;
-  max-width: 900px;
-  margin: 0 auto;
-}
