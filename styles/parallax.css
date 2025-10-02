@@ -79,7 +79,7 @@
 
 /* Farther layer (slower) */
 .pxp-1{
-  --img: url("assets/backgrounds/parallax_himmel.png");
+  --img: url("../assets/backgrounds/parallax_himmel.png");
   --size: auto 100%;
   --y: 65%;
   --speed: 1000s;
@@ -87,7 +87,7 @@
 }
 /* Hero variant of the same art, cropped version */
 .pxp-1-cropped{
-  --img: url("assets/backgrounds/parallax_himmel-FADE.png");
+  --img: url("../assets/backgrounds/parallax_himmel-FADE.png");
   --size: auto 100%;
   --y: 65%;
   --speed: 1500s;
@@ -96,7 +96,7 @@
 
 /* Nearer layer (faster) */
 .pxp-2{
-  --img: url("assets/backgrounds/parallax_sky.png");
+  --img: url("../assets/backgrounds/parallax_sky.png");
   --size: auto 80%;
   --y: 92%;
   --speed: 120s;
@@ -105,7 +105,7 @@
 }
 
 .pxp-2-fast{
-  --img: url("assets/backgrounds/parallax_sky.png");
+  --img: url("../assets/backgrounds/parallax_sky.png");
   --size: auto 100%;
   --y: 92%;
   --speed: 100s;
