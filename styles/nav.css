@@ -15,7 +15,7 @@ nav {
 
 nav a[aria-current="page"] {
   color: var(--accent-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
@@ -41,7 +41,7 @@ nav a[aria-current="page"] {
 }
 
 .nav-links li a:hover {
-  color: #7f77f1; /* placeholder accent */
+  color: #7f77f1;
 }
 .nav-links li::before {
   content: none;
@@ -127,11 +127,11 @@ nav a[aria-current="page"] {
 .menu-links li + li { 
   margin-top: 0.25rem; }
 
-/* underline-on-hover like your tabs */
+/* underline-on-hover*/
 .menu-links a {
   position: relative;
   display: inline-block;
-  padding: 0.4em 0;
+  padding: 0.2em 0;
   font-weight: bold;
   font-size: 1.5em;
   color: #222;

@@ -2,7 +2,7 @@
 /* Landing page */
 #banner {
   max-width: none;
-  margin: 0;
+  margin: -0.4rem;
   padding: 0;
 }
 
@@ -131,10 +131,10 @@
 
 .project-meta {
   border: none;
-  background-color: #e9ebff;   /* faint off-white background */
+  background-color: #e9ebff;
   border-radius: 8px;
   margin: 1rem 0 0 0;
-  padding: 0.5rem 2rem 1rem;               /* space inside the box */
+  padding: 0.5rem 2rem 1rem; 
   line-height: 1.6;
 }
 
@@ -155,7 +155,7 @@
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  gap: 1.5rem; /* space between items */
+  gap: 1.5rem;
 }
 
 .img-grid-2s img {
@@ -198,6 +198,16 @@
   gap: 0.5em;
 }
 
+
+/* Responsive: stack on narrower screens */
+@media (max-width: 960px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-aside {
+    order: -1; /* put details above the body on mobile, adjust if you prefer below */
+  }
+}
 
 /*Unique header stylings */
 .pre-title {

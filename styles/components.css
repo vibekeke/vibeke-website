@@ -33,7 +33,7 @@ All of my neat reusable components that are used on many pages :)
 }
 
 .project-button,
-.project-button-2 {
+.project-button-2, .project-button-l {
   display: inline-flex;            
   align-items: center;             
   justify-content: center;         
@@ -45,12 +45,12 @@ font-weight: bold;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.project-button {
+.project-button, .project-button-l {
   background-color: transparent;
   color: var(--accent-color-dark);
   border: 1px solid var(--accent-color-dark);
 }
-.project-button:hover {
+.project-button:hover, .project-button-l:hover {
   background-color: #27287a;
   color: white;
 }
@@ -68,7 +68,11 @@ font-weight: bold;
   color: white;
 }
 
-
+.project-button-l {
+  background-color: white;
+  font-size: 1.3rem;
+  padding: 0.8rem 1.2rem 0.8rem;
+}
 
 
 /* --- Back-to-top button --- */
@@ -130,16 +134,6 @@ font-weight: bold;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
-}
-
-/* Responsive: stack on narrower screens */
-@media (max-width: 960px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-  .project-aside {
-    order: -1; /* put details above the body on mobile, adjust if you prefer below */
-  }
 }
 
 
@@ -224,3 +218,75 @@ font-weight: bold;
 
 .carousel-btn-s.prev { left: 0.5rem; }
 .carousel-btn-s.next { right: 0.5rem; }
+
+
+
+
+
+/* ---- Project Showcase ---- */
+
+.section-title,
+.showcase .section-title { text-align: center; }
+
+.section-title {
+  margin-bottom: 2rem;
+}
+
+
+.showcase-grid{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.showcase-card{
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.123);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.showcase-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 3px 14px 28px rgba(0, 0, 0, 0.151);
+}
+
+.showcase-body {
+  padding: 0.4rem 1.2rem;
+}
+
+
+.showcase-thumb{ display:block; }
+
+.showcase-thumb img{
+  display:block;
+  width:100%;
+  aspect-ratio: 16/12;
+  object-fit: cover;
+}
+
+.showcase-tags{
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:.9rem;
+  list-style:none; 
+  padding:0;
+
+}
+
+.showcase-tags li{
+  font-size:.85rem; 
+  padding:.35rem .6rem;
+  border-radius:999px; 
+  background:rgba(82, 83, 150, 0.137);
+}
+
+.showcase-tags li::before {
+  content: none;        /* custom bullet */
+  position: absolute;
+  left: 0;
+  top: 0;         /* tweak vertical centering */
+}
+

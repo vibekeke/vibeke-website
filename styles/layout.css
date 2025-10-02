@@ -16,6 +16,11 @@ section {
   white-space: nowrap;
 }
 
+.center-container {
+    display: flex;
+    justify-content: center;
+}
+
 
 .about-container {
     background-color: rgb(255, 255, 255);
@@ -45,7 +50,7 @@ section {
 /* Desktop: text gets the wide column, photo the narrow one */
 @media (min-width: 820px) {
   .about-grid {
-    grid-template-columns: 1fr 220px;  /* <-- was 220px 1fr */
+    grid-template-columns: 1fr 220px;
     align-items: center;
     justify-items: start;
     text-align: left;
