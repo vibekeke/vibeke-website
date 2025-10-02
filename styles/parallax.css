@@ -1,5 +1,4 @@
 /* ===== HERO (full-bleed banner) ===== */
-/* --- FULL-BLEED HERO (escapes section/container max-width) --- */
 .hero{
   aspect-ratio: 16 / 4;     /* pick the ratio you like */
   position: relative;
@@ -28,7 +27,7 @@
   pointer-events: none;
 }
 
-/* if you have foreground content inside .hero, keep it above: */
+
 .hero .hero-content{ position: relative; z-index: 1; }
 
 /* ===== PAGE-WIDE BACKGROUND ===== */
@@ -47,10 +46,10 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  --img: none;        /* set per layer (below) */
-  --y: 90%;           /* vertical align */
-  --size: auto 100%;  /* background-size */
-  --speed: 40s;       /* duration */
+  --img: none;        
+  --y: 90%;           
+  --size: auto 100%; 
+  --speed: 40s;       
 }
 
 /* 200% track */
@@ -74,8 +73,7 @@
 @keyframes track-left  { from { transform: translateX(0); }    to { transform: translateX(-50%); } }
 @keyframes track-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-/* ===== YOUR LAYERS ===== */
-/* Page bg uses .pxp-1 and .pxp-2; hero uses .pxp-1-cropped and .pxp-2 */
+
 
 /* Farther layer (slower) */
 .pxp-1{
@@ -113,7 +111,6 @@
   opacity: .85;
 }
 
-/* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce){
   .pxp-layer::before{ animation: none !important; }
 }
