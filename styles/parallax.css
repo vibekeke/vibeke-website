@@ -76,6 +76,23 @@
 
 
 
+/*Sticky container for adding clouds to the bottom*/
+/* Pull the clouds up under the last section, sit behind everything */
+.px-bottom{
+  position: relative;
+  height: 640px;
+  margin-top: -33rem;   /* closes the gap */
+  pointer-events: none;
+  z-index: -1;                                     /* behind content */
+}
+
+/* Use your existing layer system, but stop the animation */
+.px-bottom .pxp-layer{ 
+  position: absolute; inset: 0;
+  --size: auto 100%;
+}
+
+
 /* Farther layer (slower) */
 .pxp-1{
   --img: url("../assets/backgrounds/parallax_himmel.png");
@@ -114,22 +131,4 @@
 
 @media (prefers-reduced-motion: reduce){
   .pxp-layer::before{ animation: none !important; }
-}
-
-
-/*Sticky container for adding clouds to the bottom*/
-
-/* Pull the clouds up under the last section, sit behind everything */
-.px-bottom{
-  position: relative;
-  height: 640px;
-  margin-top: -33rem;   /* closes the gap */
-  pointer-events: none;
-  z-index: -1;                                     /* behind content */
-}
-
-/* Use your existing layer system, but stop the animation */
-.px-bottom .pxp-layer{ 
-  position: absolute; inset: 0;
-  --size: auto 100%;
 }
