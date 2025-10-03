@@ -72,3 +72,7 @@ section {
   color: #000000c9;
   margin-top: 0.8rem;
 }
+
+.note {
+  color: rgba(52, 52, 95, 0.692);
+}

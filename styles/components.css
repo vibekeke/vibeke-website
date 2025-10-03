@@ -290,3 +290,27 @@ font-weight: bold;
   top: 0;         /* tweak vertical centering */
 }
 
+
+
+
+/* Card look (optional) */
+.figma-card{
+  margin: 24px auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden; /* clips rounded corners */
+  box-shadow: 3px 14px 28px rgba(0, 0, 0, 0.151);
+}
+
+/* Make the iframe scale with the container */
+.figma-embed{
+  display: block;
+  width: 100%;
+  aspect-ratio: 210 / 297;  /* adjusts height automatically */
+  border: 0;
+}
+
+/* Tweak ratio on small screens if you want it taller */
+@media (width <= 485px){
+  .figma-embed{ aspect-ratio: 3 / 4; }
+}
