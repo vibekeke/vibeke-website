@@ -225,6 +225,8 @@ font-weight: bold;
 
 /* ---- Project Showcase ---- */
 
+
+
 .section-title,
 .showcase .section-title { text-align: center; }
 
@@ -246,6 +248,7 @@ font-weight: bold;
   overflow: hidden;
   box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.123);
   transition: transform .12s ease, box-shadow .12s ease;
+  margin-bottom: 2rem;
 }
 
 .showcase-card:hover{
