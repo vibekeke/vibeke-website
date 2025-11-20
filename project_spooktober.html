@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moonlight Miko – Project</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Mulish:wght@300;400&display=swap">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="mediaqueries.css"/>
+</head>
+<body class="project-page">
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
+        const here = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll("nav a[href]").forEach(a => {
+          if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
+        });
+      });
+  </script>
+
+  <section id="banner">
+    <div class="banner-image">
+      <img src="assets\projects\spooktober\showcase_brightL.png" alt="Banner artwork: Illustration of a sunrise">
+    </div>
+  </section>
+  <section class="project-wrap" aria-labelledby="proj-title">
+    <div class="project-grid">
+      <article class="project-body">
+        <h2 class="pre-title">Game Project</h2>
+        <h1 class="title">UNFINISHED</h1>
+        <p class="lede">
+          A short horror game about a young girl tying up lose ends
+        </p>
+        <p>
+        This game was made as part of the Spillklimpring "Spooktober Nights" game jam 2025. It was made in a single week, by me and a team of friends. 
+        The theme of the jam was "Don't look".
+      </p>
+        <p>
+        We wanted to create an experience inspired by indie horror RPGs of the 2010s, such as Ib, Ao Oni and Yume nikki. The game is a short top-down adventure with a few special mechanics to match 
+        the theme of the gamejam.</p>
+        <p>
+        The main mechanic of the game is the player flashlight - the player has to use it to navigate the dark world, but looking at certain enemies will cause problems in turn.
+        Aside from this, we wanted to fill the world with flavortext and fun events to make it feel like wandering around a haunted house.</p>
+        <p>The game can be played in browser here:
+        </p>
+        <a class="inline-link" href="https://hannnst.itch.io/unfinished" target="_blank">Itch.io</a>
+        </p>  
+        <br>
+        <h3>Contributors</h3>
+        <ul>
+          <li><strong>Vibeke Ihlen Selnes</strong> — Game direction, Scene Management and Game States, GUI, Art and Assets</li>
+            <li><strong>Hanna Nikoline Støen</strong> — Game direction, Enemy AI and Player Detection, Art and Assets </li>
+            <li><strong>Robin</strong> — Game direction, Player flashlight</li>
+            <li><strong>Mila</strong> — Art and Assets, Layout and Dialogue</li>
+        </ul>
+        <br>
+        <p>The project is built in Godot Engine 4.5. Sound effects are attributed to <a href="https://www.zapsplat.com/" class="inline-link">zapsplat.com</a>.
+        All other art and animations are created by us personally, without the use of AI.</p>
+      </article>
+
+      <aside class="project-meta">
+        <h2>Project details</h2>
+        <dl>
+            <dt>Project type</dt><dd>Godot game (team)</dd>
+            <dt>Role</dt><dd>UI/UX + gameplay</dd><dd>Art, Animations and Assets</dd>
+            <dt>Tools</dt><dd>Godot Engine, gdscript, GDShader, Clip Studio Paint</dd>
+            <p></p>
+            <dt>Status</dt><dd>In progress</dd>
+            <dt>Latest version</dt><dd>Prototype v.1.0.0-alpha</dd>
+        </dl>
+
+        <div class="aside-links">
+            <a class="project-button" href="https://bekeblob.itch.io/" target="_blank">Play the Demo</a>
+            <a class="project-button" href="https://github.com/vibekeke/mgg" target="_blank">View on GitHub</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="project-wrap" aria-labelledby="video-title">
+    <h2 id="video-title">Gameplay Video</h2>
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/UU48U2dpOOk"
+        title="Moonlight Miko Gameplay"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <!--UI showcase-->
+  <section class="project-wrap" aria-label="Project screenshots">
+    <h2>Screenshots</h2>
+    <p></p>
+    <div class="carousel">
+      <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+
+      <div class="carousel-track" tabindex="0">
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/spooktober/main_menu.png" alt="Main menu screen">
+          <figcaption>The main menu is simple, but still captures the essense of the game :)</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/spooktober/forest.png" alt="screenshot from the game">
+          <figcaption>The game starts in a dark forest.</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/spooktober/garden.png" alt="screenshot from the game">
+          <figcaption>House exterior featuring a gate that traps the player until they complete their tasks.</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/spooktober/tasklist.png" alt="screenshot from the game">
+          <figcaption>The player eventually picks up a list of tasks to complete. When each is completed they gain an item.</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img loading="lazy" src="assets/projects/spooktober/paintings.png" alt="screenshot from the game">
+          <figcaption>House interior - We decorated the game with homemade artworks!</figcaption>
+        </figure>
+      </div>
+
+      <button class="carousel-btn next" aria-label="Next image">›</button>
+    </div>
+  </section>
+
+    <!-- 3) My contributions -->
+  <section class="project-wrap" aria-labelledby="contrib-title">
+    <h1 id="contrib-title">My Contributions</h1>
+    <p>In this project, I was the most experienced using Godot. As such I took on a lot of the underlying mechanics of the game, such as player interaction, inventory systems, scene switching, transitions and menus.
+      Luckily the team learned super fast, and we were able to implement more features than I ever would have imagined in a week!
+    </p>
+    <p>As for this project, I had the following responsibilities:</p>
+    <ul class="tight-list">
+      <li>Designed and implemented the menus in the game: Title screen, pause menus, inventory, and display messages.
+      <li>Designed a basic slot-based inventory system</li>
+      <li>Implemented a modular system for player/object interaction</li>
+      <li>Player Animation and other background assets</li>
+      <li>Iterated on gameplay ideas and story in collaboration with the team</li>
+    </ul>
+    <br>
+    <p>If you have questions about how the game was created, don't hesitate to send me a message on bluesky or through other channels listed on this page</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
