@@ -179,6 +179,7 @@
   border-radius: 8px;
 }
 
+
 .text-image-wide img {
   display: block;
   width: 100%;
@@ -186,10 +187,24 @@
   border-radius: 8px;
 }
 
-.text-image p, .text-image-wide p {
+.text-image p, .text-image-wide p, .text-image-centered p {
   font-size: 1rem;
   opacity: .8;
   margin-top: 0.5em; /* adds a little spacing from the image */
+}
+
+
+
+.text-image-centered img {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.text-image-centered {   /*div*/
+  text-align: center;
 }
 
 .aside-links {    /*div for holding links on the project page.*/

@@ -5,3 +5,12 @@
 @import url(styles/nav.css) layer(nav);
 @import url(styles/components.css) layer(components);
 @import url(styles/projects.css) layer(projects);
+
+model-viewer {
+    width: 90%;
+    height: 600px;
+    background-color: #ccc;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 0 auto; 
+}

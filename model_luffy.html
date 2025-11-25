@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Piece 'Egghead Luffy' – 3D model</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Mulish:wght@300;400&display=swap">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="mediaqueries.css"/>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body class="project-page">
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("nav-placeholder").innerHTML = html;
+        const here = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll("nav a[href]").forEach(a => {
+          if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
+        });
+      });
+  </script>
+  <section class="project-wrap" aria-labelledby="proj-title">
+    <h1>3D model & Rig - One Piece 'Luffy' fan work</h1>
+    </h1>
+    <p>This is a fan project I made over the course of a week or so - a 3D character model made from scratch
+      in blender. I wanted to test my ability to follow the full character modelling pipeline - from sketch to modelling, to texture painting, rigging, weight painting and lighting.
+    </p>
+    <p>You can see the full process video and finished model below.</p>
+    <br>
+    <h2>Finished Model</h2>
+    <p>Here you can view and spin the model around. Note that this version of the model couldn't be exported with the intended toon shaders.
+      For the finished result as I intended it to look, I've put a link to the process video below:)
+    </p>
+    <p>You can also
+      <a class="inline-link" href="assets/projects/luffy-model/MONKEY_D_TOON.blend">download the blend file here</a>, if you'd like :)
+    </p>
+    <br>
+    <model-viewer
+      id="character"
+      src="assets/projects/luffy-model/MONKEY_D_BAKED8.glb"
+      alt="Stylized character"
+      autoplay
+      camera-controls
+      interaction-prompt="none"
+      exposure="1.0"
+      shadow-intensity="0.6"
+      shadow-softness="0.5"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      >
+    </model-viewer>
+    <br>
+    <p>The model features texture swapping with drivers for face animations, and a setup for animating the fingers quickly. The following gifs show some footage of how the model can be used. </p>
+    <div class="text-image-centered">
+      <img src="assets/projects/luffy-model/luffy_facerig_cropped.gif" alt="Texture swapping animations">
+      <p>The model features 8 eye textures and 8 mouth textures</p>
+    </div>
+    <br>
+    <div class="text-image-centered">
+      <img src="assets/projects/luffy-model/hand.gif" alt="Showcase of the hand drivers">
+      <p>A convenient way of posing the fingers using drivers :)</p>
+      <br>
+      <br>
+    </div>
+    <h2>Process video</h2>
+    <p>Warning, this video has some loud music. I will create a new video soon.</p>
+    <p>WIP: I will export a new video w/out music so it will be playable embedded in the website :I</p>
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/T8gr10IUmis?si=9dr0_0wmTf5J25DY"
+        title="3D Timelapse Egghead Luffy"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
